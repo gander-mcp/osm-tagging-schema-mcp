@@ -81,11 +81,6 @@ jobs:
       - name: Run npm audit (production only, high)
         run: npm audit --omit=dev --audit-level=high
 
-      # Dev dependencies do not ship to users: informational on PRs
-      - name: Run npm audit (all dependencies incl. dev, moderate)
-        run: npm audit --audit-level=moderate
-        continue-on-error: true
-
       - name: Verify registry signatures and provenance
         run: npm audit signatures
 
