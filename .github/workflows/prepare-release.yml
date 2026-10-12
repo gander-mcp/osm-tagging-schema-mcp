@@ -14,7 +14,7 @@ permissions: read-all
 jobs:
   prepare-release:
     name: Prepare Release Branch
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     permissions:
       contents: write       # Required for creating branches and pushing
