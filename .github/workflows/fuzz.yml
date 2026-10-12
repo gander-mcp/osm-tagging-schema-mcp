@@ -15,7 +15,7 @@ jobs:
   # Extended fuzzing run (30 minutes), weekly and on demand only
   fuzz-extended-address:
     name: Fuzzing (Extended)
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
@@ -58,7 +58,7 @@ jobs:
     name: Fuzzing Summary
     if: always()
     needs: [fuzz-extended-address]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Harden the runner (Audit all outbound calls)
