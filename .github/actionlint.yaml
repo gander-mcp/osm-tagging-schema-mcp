@@ -1,0 +1,5 @@
+# actionlint hardcodes runner labels and upstream has not released ubuntu-26.04 yet.
+# Remove once a release includes it: https://github.com/rhysd/actionlint/issues/682
+self-hosted-runner:
+  labels:
+    - ubuntu-26.04
