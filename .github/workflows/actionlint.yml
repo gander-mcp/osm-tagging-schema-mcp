@@ -13,7 +13,7 @@ jobs:
   # Detect which files changed to conditionally run actionlint
   changes:
     name: Detect Changes
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       pull-requests: read
@@ -40,7 +40,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.workflows == 'true'
     name: Lint GitHub Actions Workflows
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Harden the runner (Audit all outbound calls)

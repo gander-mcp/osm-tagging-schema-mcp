@@ -16,7 +16,7 @@ jobs:
     name: Detect Changes
     # Skip change detection for manual triggers (always run all tests)
     if: github.event_name != 'workflow_dispatch'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       pull-requests: read
@@ -65,7 +65,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.code == 'true' || github.event_name == 'workflow_dispatch'
     name: Unit and Integration Test (Node ${{ matrix.node }})
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
@@ -99,7 +99,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.code == 'true' || github.event_name == 'workflow_dispatch'
     name: MCP Test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       total: ${{ steps.mcp-test.outputs.total }}
       passed: ${{ steps.mcp-test.outputs.passed }}

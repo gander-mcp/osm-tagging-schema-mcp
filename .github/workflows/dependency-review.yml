@@ -11,7 +11,7 @@ jobs:
   # Detect which files changed to conditionally run dependency review
   changes:
     name: Detect Changes
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       pull-requests: read
@@ -41,7 +41,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.dependencies == 'true'
     name: Review Dependencies
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       pull-requests: write
