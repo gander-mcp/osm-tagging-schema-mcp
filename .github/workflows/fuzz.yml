@@ -3,13 +3,13 @@ name: Fuzzing with ClusterFuzzLite
 on:
   # Run fuzzing on a schedule (weekly)
   schedule:
-    - cron: "0 2 * * 1"  # Every Monday at 2 AM UTC
-  workflow_dispatch:  # Allow manual triggering
+    - cron: "0 2 * * 1" # Every Monday at 2 AM UTC
+  workflow_dispatch: # Allow manual triggering
 
 permissions:
   contents: read
-  issues: write  # For filing issues on findings
-  security-events: write  # For uploading SARIF results
+  issues: write # For filing issues on findings
+  security-events: write # For uploading SARIF results
 
 jobs:
   # Extended fuzzing run (30 minutes), weekly and on demand only
@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '26'
+          node-version: "26"
 
       - name: Install npm 11.19.1
         shell: bash

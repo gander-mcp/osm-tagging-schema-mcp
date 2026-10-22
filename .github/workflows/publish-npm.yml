@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'NPM package version to publish (e.g., 1.2.3)'
+        description: "NPM package version to publish (e.g., 1.2.3)"
         required: true
         type: string
 
@@ -12,24 +12,23 @@ on:
 permissions: read-all
 
 jobs:
-
   publish-npm:
     name: Build, Publish, Tag and Release
     runs-on: ubuntu-latest
 
     # Required permissions for complete release process
     permissions:
-      id-token: write       # Required for npm provenance and SLSA attestations
-      attestations: write   # Required for build provenance attestations
-      contents: write      # Required for creating tags and GitHub releases
+      id-token: write # Required for npm provenance and SLSA attestations
+      attestations: write # Required for build provenance attestations
+      contents: write # Required for creating tags and GitHub releases
       pull-requests: write # Required for PR comments
 
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
         with:
-          disable-sudo: 'true'
-          egress-policy: 'audit'
+          disable-sudo: "true"
+          egress-policy: "audit"
 
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -48,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '26'
+          node-version: "26"
 
       - name: Install npm 11.19.1
         shell: bash

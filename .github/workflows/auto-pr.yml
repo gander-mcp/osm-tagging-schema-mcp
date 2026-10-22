@@ -3,7 +3,7 @@ name: Auto Create PR for Claude Branches
 on:
   push:
     branches:
-      - 'claude/**'
+      - "claude/**"
 
 permissions:
   contents: read

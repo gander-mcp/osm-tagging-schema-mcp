@@ -4,9 +4,9 @@
 
 homepage: "https://github.com/gander-tools/osm-tagging-schema-mcp"
 language: javascript
-primary_contact: "security@example.com"  # Update with actual security contact
+primary_contact: "security@example.com" # Update with actual security contact
 auto_ccs:
-  - "maintainer@example.com"  # Update with maintainer email
+  - "maintainer@example.com" # Update with maintainer email
 
 # Sanitizers to use
 sanitizers:

@@ -1,34 +1,34 @@
-name: 'Run Unit and Integration Tests'
-description: 'Run type checking, linting, formatting, unit tests, build, and integration tests'
+name: "Run Unit and Integration Tests"
+description: "Run type checking, linting, formatting, unit tests, build, and integration tests"
 
 inputs:
   run-typecheck:
-    description: 'Run type checking'
+    description: "Run type checking"
     required: false
-    default: 'true'
+    default: "true"
   run-lint:
-    description: 'Run linting'
+    description: "Run linting"
     required: false
-    default: 'true'
+    default: "true"
   run-format:
-    description: 'Run format checking'
+    description: "Run format checking"
     required: false
-    default: 'true'
+    default: "true"
   run-unit-tests:
-    description: 'Run unit tests'
+    description: "Run unit tests"
     required: false
-    default: 'true'
+    default: "true"
   run-build:
-    description: 'Run build'
+    description: "Run build"
     required: false
-    default: 'true'
+    default: "true"
   run-integration-tests:
-    description: 'Run integration tests'
+    description: "Run integration tests"
     required: false
-    default: 'true'
+    default: "true"
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Run type check
       if: inputs.run-typecheck == 'true'
