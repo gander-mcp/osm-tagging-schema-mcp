@@ -67,7 +67,7 @@ jobs:
           # Allow specific licenses
           # allow-licenses: MIT, Apache-2.0, BSD-3-Clause, ISC
           # Deny packages from specific sources
-          deny-packages: ''
+          deny-packages: ""
           # Comment on PR with results
           comment-summary-in-pr: always
           # Show dependency changes including OpenSSF Scorecard

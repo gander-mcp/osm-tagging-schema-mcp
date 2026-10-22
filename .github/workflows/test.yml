@@ -2,10 +2,10 @@ name: Test
 
 on:
   pull_request:
-    branches: [ "**" ]
+    branches: ["**"]
   push:
-    branches: [ "master" ]
-  workflow_dispatch:  # Allow manual triggering
+    branches: ["master"]
+  workflow_dispatch: # Allow manual triggering
 
 permissions:
   contents: read
@@ -118,7 +118,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '26'
+          node-version: "26"
 
       - name: Install npm 11.19.1
         shell: bash
@@ -137,17 +137,17 @@ jobs:
       - name: Run MCP Jest and parse results
         id: mcp-test
         run: |
-            mcp-jest --config tests/mcp-jest.json --reporter json --report-output report.json 
-            
-            {
-              echo "total=$(jq '.total' report.json)"
-              echo "passed=$(jq '.passed' report.json)"
-              echo "failed=$(jq '.failed' report.json)"
-              echo "skipped=$(jq '.skipped' report.json)"
-            } >> "$GITHUB_OUTPUT"
-            
-            echo "Results: $(echo "$OUTPUT" | jq '.passed')/$(echo "$OUTPUT" | jq '.total') passed"
-            echo "=== End raw output ==="
+          mcp-jest --config tests/mcp-jest.json --reporter json --report-output report.json 
+
+          {
+            echo "total=$(jq '.total' report.json)"
+            echo "passed=$(jq '.passed' report.json)"
+            echo "failed=$(jq '.failed' report.json)"
+            echo "skipped=$(jq '.skipped' report.json)"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Results: $(echo "$OUTPUT" | jq '.passed')/$(echo "$OUTPUT" | jq '.total') passed"
+          echo "=== End raw output ==="
       - name: Validate test results
         id: mcp-test-validate
         run: |
@@ -155,7 +155,7 @@ jobs:
           PASSED=${{ steps.mcp-test.outputs.passed }}
           FAILED=${{ steps.mcp-test.outputs.failed }}
           SKIPPED=${{ steps.mcp-test.outputs.skipped }}
-          
+
           if [ "$TOTAL" -gt 0 ] && [ "$PASSED" -eq "$TOTAL" ] && [ "$FAILED" -eq 0 ] && [ "$SKIPPED" -eq 0 ]; then
             echo "success=true" >> "$GITHUB_OUTPUT"
             echo "✅ All tests passed ($PASSED/$TOTAL)"

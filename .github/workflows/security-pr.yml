@@ -69,7 +69,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '26'
+          node-version: "26"
 
       # npm must be newer than 11.5.1 for Node 24/26 compatibility
       - name: Install npm 11.19.1
@@ -104,7 +104,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '26'
+          node-version: "26"
 
       # npm must be newer than 11.5.1 for Node 24/26 compatibility
       - name: Install npm 11.19.1
@@ -145,7 +145,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '26'
+          node-version: "26"
 
       # npm must be newer than 11.5.1 for Node 24/26 compatibility
       - name: Install npm 11.19.1
