@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!**/node_modules", "!**/dist", "!**/build", "!**/coverage", "!**/*.md"]
+		"includes": ["**", "!**/node_modules", "!**/dist", "!**/build", "!**/*.md", "!**/coverage"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -15,7 +15,13 @@
 		"indentWidth": 2,
 		"lineWidth": 100
 	},
-	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
